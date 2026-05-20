@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "name": "awesome-codex-plugins",
   "version": "1.0.0",
-  "last_updated": "2026-05-19",
+  "last_updated": "2026-05-18",
   "total": 81,
   "categories": [
     "Development & Workflow",
@@ -188,6 +188,16 @@
       "category": "Development & Workflow",
       "source": "awesome-codex-plugins",
       "install_url": "https://raw.githubusercontent.com/ejentum/ejentum-mcp/HEAD/.codex-plugin/plugin.json"
+    },
+    {
+      "name": "Espresso",
+      "url": "https://github.com/mirkobozzetto/espresso",
+      "owner": "mirkobozzetto",
+      "repo": "espresso",
+      "description": "Full token-saving stack - output compression, global rules, RTK hook, Caveman ultra, GitNexus config. Detects existing setup, installs only what is missing.",
+      "category": "Development & Workflow",
+      "source": "awesome-codex-plugins",
+      "install_url": "https://raw.githubusercontent.com/mirkobozzetto/espresso/HEAD/.codex-plugin/plugin.json"
     },
     {
       "name": "Frappe Agent",
@@ -388,16 +398,6 @@
       "category": "Development & Workflow",
       "source": "awesome-codex-plugins",
       "install_url": "https://raw.githubusercontent.com/xxsang/writers-loop/HEAD/.codex-plugin/plugin.json"
-    },
-    {
-      "name": "Zagrosi Forge",
-      "url": "https://github.com/zagrosi-code/zagrosi-forge",
-      "owner": "zagrosi-code",
-      "repo": "zagrosi-forge",
-      "description": "Decompose broad project briefs into researched plans and implement sectioned work with TDD, quality gates, and traceability.",
-      "category": "Development & Workflow",
-      "source": "awesome-codex-plugins",
-      "install_url": "https://raw.githubusercontent.com/zagrosi-code/zagrosi-forge/HEAD/.codex-plugin/plugin.json"
     },
     {
       "name": "Agent Message Queue",

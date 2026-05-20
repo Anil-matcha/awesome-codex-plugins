@@ -1,0 +1,12 @@
+{
+  "name": "espresso",
+  "version": "2.0.0",
+  "description": "Full token-saving stack - output compression, global rules, RTK, Caveman, GitNexus auto-config. 70-85% fewer tokens.",
+  "repository": "https://github.com/mirkobozzetto/espresso",
+  "license": "MIT",
+  "interface": {
+    "displayName": "Espresso",
+    "shortDescription": "One plugin. Full token-saving stack. 70-85% fewer tokens.",
+    "composerIcon": "./assets/icon.svg"
+  }
+}

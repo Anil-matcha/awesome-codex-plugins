@@ -60,7 +60,23 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Development & Workflow",
-      "description": "Multi-agent codebase knowledge graph generator with context-aware planning and automatic scope management \u2014 turns codebases into coherent agent workspaces."
+      "description": "Multi-agent codebase knowledge graph generator with context-aware planning and automatic scope management — turns codebases into coherent agent workspaces.",
+      "icon": "./plugins/study8677/antigravity-workspace-template/assets/icon.png"
+    },
+    {
+      "name": "archcore",
+      "displayName": "Archcore",
+      "source": {
+        "source": "local",
+        "path": "./plugins/archcore-ai/plugin"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development & Workflow",
+      "description": "Gives coding agents the architecture, rules, and prior decisions of the repo via skills, hooks, and MCP — so new changes land where the project says they belong across Claude Code, Cursor, and Codex CLI.",
+      "icon": "./plugins/archcore-ai/plugin/assets/icon.png"
     },
     {
       "name": "bringyour-migration-auditor",
@@ -88,7 +104,7 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Development & Workflow",
-      "description": "AI code reviews grounded in six classic engineering books \u2014 decay risk diagnostics with book citations, severity labels, and four analysis modes (PR review, architecture audit, tech debt, test quality).",
+      "description": "AI code reviews grounded in six classic engineering books — decay risk diagnostics with book citations, severity labels, and four analysis modes (PR review, architecture audit, tech debt, test quality).",
       "icon": "./plugins/hyhmrright/brooks-lint/assets/logo.svg"
     },
     {
@@ -133,7 +149,7 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Development & Workflow",
-      "description": "223 production-ready skills, 23 agents, and 298 Python tools across 9 domains \u2014 engineering, marketing, product, compliance, and more."
+      "description": "223 production-ready skills, 23 agents, and 298 Python tools across 9 domains — engineering, marketing, product, compliance, and more."
     },
     {
       "name": "claude-octopus",
@@ -161,7 +177,7 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Development & Workflow",
-      "description": "Analyze git history to understand a codebase before reading any code \u2014 auto-scales by repo size and cross-references hotspots with bug magnets to surface high-risk files, bus factor, and team momentum."
+      "description": "Analyze git history to understand a codebase before reading any code — auto-scales by repo size and cross-references hotspots with bug magnets to surface high-risk files, bus factor, and team momentum."
     },
     {
       "name": "ateam",
@@ -221,6 +237,21 @@
       "description": "Budgeted `rg`/`grep` replacement for Codex that narrows broad searches before they waste model context."
     },
     {
+      "name": "development-skills",
+      "displayName": "Development Skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/reidemeister94/development-skills"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development & Workflow",
+      "description": "Three-tier triage (PASS_THROUGH / LIGHT / FULL 4-phase) development workflow for Codex and Claude Code with language auto-detection (Python, Java, TypeScript, Swift, frontend) and a staff-reviewer subagent for fresh-eyes review on every change.",
+      "icon": "./plugins/reidemeister94/development-skills/assets/icon.svg"
+    },
+    {
       "name": "ejentum",
       "displayName": "ejentum-mcp",
       "source": {
@@ -233,6 +264,13 @@
       },
       "category": "Development & Workflow",
       "description": "MCP server exposing reasoning, code, anti-deception, and memory harness tools for Codex."
+    },
+    {
+      "name": "Espresso",
+      "description": "Full token-saving stack - output compression, global rules, RTK hook, Caveman ultra, GitNexus config. Detects existing setup, installs only what is missing.",
+      "install_url": "https://raw.githubusercontent.com/mirkobozzetto/espresso/HEAD/.codex-plugin/plugin.json",
+      "source_url": "https://github.com/mirkobozzetto/espresso",
+      "category": "Development & Workflow"
     },
     {
       "name": "frappe-agent",
@@ -265,6 +303,21 @@
       "icon": "./plugins/ValkyrLabs/GrayMatter/assets/composer-icon.svg"
     },
     {
+      "name": "hol-guard-plugin",
+      "displayName": "HOL Guard Plugin",
+      "source": {
+        "source": "local",
+        "path": "./plugins/hashgraph-online/hol-guard-plugin"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development & Workflow",
+      "description": "AI antivirus workflow for Codex, Claude Code, Cursor, Gemini, OpenCode, MCP servers, skills, and plugin release checks with local approvals and receipts.",
+      "icon": "./plugins/hashgraph-online/hol-guard-plugin/assets/icon.png"
+    },
+    {
       "name": "hotl",
       "displayName": "HOTL Plugin",
       "source": {
@@ -291,7 +344,8 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Development & Workflow",
-      "description": "Engineer-facing personal-data-protection compliance reference \u2014 Singapore PDPA, Thailand PDPA, Indonesia UU PDP, Malaysia PDPA (Act 709 + 2024 Amendments), Philippines DPA \u2014 organised by where in the stack each obligation lands, with checklists, breach-response runbook, and a developer-view divergence table across all five."
+      "description": "Engineer-facing personal-data-protection compliance reference — Singapore PDPA, Thailand PDPA, Indonesia UU PDP, Malaysia PDPA (Act 709 + 2024 Amendments), Philippines DPA — organised by where in the stack each obligation lands, with checklists, breach-response runbook, and a developer-view divergence table across all five.",
+      "icon": "./plugins/AltByteSG/personal-data-protection-skill/assets/icon.svg"
     },
     {
       "name": "praxis",
@@ -305,7 +359,7 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Development & Workflow",
-      "description": "Token-lean triage-driven workflow skills for coding agents: design, planning, TDD, debugging, review, worktree, subagents, and release. 10\u201340\u00d7 cheaper per skill than comparable frameworks while preserving full workflow discipline.",
+      "description": "Intent-driven workflow skills for coding agents: describe what done looks like, not the steps. Triage-first design keeps token costs low across design, TDD, debug, review, and release.",
       "icon": "./plugins/ouonet/praxis/assets/logo-mark.svg"
     },
     {
@@ -336,7 +390,7 @@
       },
       "category": "Development & Workflow",
       "description": "Delegate tasks to specialist AI agents via the HOL Registry, plan, find, summon, and recover sessions.",
-      "icon": "./plugins/hashgraph-online/registry-broker-codex-plugin/assets/icon.svg"
+      "icon": "./plugins/hashgraph-online/registry-broker-codex-plugin/assets/icon.png"
     },
     {
       "name": "session-orchestrator",
@@ -350,7 +404,7 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Development & Workflow",
-      "description": "Session orchestration for Claude Code, Codex, and Cursor IDE \u2014 structured planning, wave-based execution, VCS integration (GitLab + GitHub), quality gates, and clean session close-out with issue tracking.",
+      "description": "Session orchestration for Claude Code, Codex, and Cursor IDE — structured planning, wave-based execution, VCS integration (GitLab + GitHub), quality gates, and clean session close-out with issue tracking.",
       "icon": "./plugins/Kanevry/session-orchestrator/assets/icon.svg"
     },
     {
@@ -365,7 +419,7 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Development & Workflow",
-      "description": "Three-phase Requirements \u2192 Design \u2192 Tasks workflow for Claude Code and Codex \u2014 EARS notation acceptance criteria, autonomous execution loop, cross-spec dependencies, and post-implementation acceptance testing."
+      "description": "Three-phase Requirements → Design → Tasks workflow for Claude Code and Codex — EARS notation acceptance criteria, autonomous execution loop, cross-spec dependencies, and post-implementation acceptance testing."
     },
     {
       "name": "stark",
@@ -436,7 +490,7 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Development & Workflow",
-      "description": "Role-based team delivery framework \u2014 Tech Lead-orchestrated 8-role system with 195+ skills, 27 specialist agents, 80+ commands, hooks, and ECC harness for Claude Code, Codex, and OpenCode."
+      "description": "Role-based team delivery framework — Tech Lead-orchestrated 8-role system with 195+ skills, 27 specialist agents, 80+ commands, hooks, and ECC harness for Claude Code, Codex, and OpenCode."
     },
     {
       "name": "tool-advisor",
@@ -493,7 +547,7 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Development & Workflow",
-      "description": "Developer personality portrait generator \u2014 analyzes AI conversation history to produce MBTI type (16 color themes), capability radar, developer rating, 3-dimension famous match, and a persona skill that lets any AI \"think like you\"."
+      "description": "Developer personality portrait generator — analyzes AI conversation history to produce MBTI type (16 color themes), capability radar, developer rating, 3-dimension famous match, and a persona skill that lets any AI \"think like you\"."
     },
     {
       "name": "writers-loop",
@@ -578,7 +632,8 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Tools & Integrations",
-      "description": "Manage Bitbucket repos, PRs, branches, issues, webhooks, and pipelines for Data Center and Cloud."
+      "description": "Manage Bitbucket repos, PRs, branches, issues, webhooks, and pipelines for Data Center and Cloud.",
+      "icon": "./plugins/avivsinai/bitbucket-cli/assets/bkt-icon.svg"
     },
     {
       "name": "calle",
@@ -592,7 +647,8 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Tools & Integrations",
-      "description": "Plan, run, and inspect Call-E phone call workflows from Codex through the calle CLI."
+      "description": "Plan, run, and inspect Call-E phone call workflows from Codex through the calle CLI.",
+      "icon": "./plugins/CALLE-AI/call-e-integrations/assets/CALL-E-Icon-Black.svg"
     },
     {
       "name": "canvas-apps-plugin-codex",
@@ -681,6 +737,21 @@
       "category": "Tools & Integrations",
       "description": "Full-stack SEO audits, Google API workflows, backlinks analysis, reporting, and optional MCP extensions for Codex.",
       "icon": "./plugins/BestLemoon/codex-seo/assets/icon.svg"
+    },
+    {
+      "name": "codex-usage-tracker",
+      "displayName": "Codex Usage Tracker",
+      "source": {
+        "source": "local",
+        "path": "./plugins/douglasmonsky/codex-usage-tracker"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Tools & Integrations",
+      "description": "Track aggregate Codex token usage from local session logs with MCP tools for summaries, session detail, CSV export, and dashboard generation.",
+      "icon": "./plugins/douglasmonsky/codex-usage-tracker/assets/icon.svg"
     },
     {
       "name": "context-pack",
@@ -822,7 +893,8 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Tools & Integrations",
-      "description": "Query traces, debug exceptions, analyze sessions, and manage prompts via MCP tools."
+      "description": "Query traces, debug exceptions, analyze sessions, and manage prompts via MCP tools.",
+      "icon": "./plugins/avivsinai/langfuse-mcp/assets/langfuse-icon.svg"
     },
     {
       "name": "launchfast",
@@ -851,7 +923,7 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Tools & Integrations",
-      "description": "Decentralized e-commerce skills \u2014 deploy self-hosted stores, import products from Shopify/Amazon, configure custom domains and Telegram bots, set up Tor privacy, and manage your store via MCP."
+      "description": "Decentralized e-commerce skills — deploy self-hosted stores, import products from Shopify/Amazon, configure custom domains and Telegram bots, set up Tor privacy, and manage your store via MCP."
     },
     {
       "name": "morning-ai",
@@ -981,7 +1053,7 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Tools & Integrations",
-      "description": "Russian text quality \u2014 ~1,040 rules for typography, info-style, editorial, UX writing, and business correspondence."
+      "description": "Russian text quality — ~1,040 rules for typography, info-style, editorial, UX writing, and business correspondence."
     },
     {
       "name": "rust-reverse-engineering",
@@ -1009,7 +1081,7 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Tools & Integrations",
-      "description": "Build websites from Markdown via MCP \u2014 22 tools for creating pages, generating content, validating, running SEO audits, configuring settings, and deploying static sites to Cloudflare Pages."
+      "description": "Build websites from Markdown via MCP — 22 tools for creating pages, generating content, validating, running SEO audits, configuring settings, and deploying static sites to Cloudflare Pages."
     },
     {
       "name": "n8n-mcp-synta-codex",
@@ -1067,7 +1139,7 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Tools & Integrations",
-      "description": "Strip AI writing patterns from text output \u2014 removes filler phrases, hedging language, and generic constructs to produce cleaner written content. Install: `npm install -g unslop`."
+      "description": "Strip AI writing patterns from text output — removes filler phrases, hedging language, and generic constructs to produce cleaner written content. Install: `npm install -g unslop`."
     },
     {
       "name": "upwork-autopilot",
@@ -1097,156 +1169,7 @@
       "category": "Tools & Integrations",
       "description": "GitHub-ready Codex plugin bundle for Yandex Direct, Wordstat, Metrika, and Roistat.",
       "icon": "./plugins/nebelov/yandex-direct-for-all/assets/icon.png"
-    },
-    {
-      "name": "mturac-commit-narrator",
-      "displayName": "Commit Narrator",
-      "source": {
-        "source": "local",
-        "path": "./plugins/mturac/commit-narrator"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Development & Workflow",
-      "description": "Generate semantic commit message from staged diff, including the why behind changes.",
-      "icon": "./plugins/mturac/commit-narrator/assets/icon.svg"
-    },
-    {
-      "name": "mturac-pr-storyteller",
-      "displayName": "PR Storyteller",
-      "source": {
-        "source": "local",
-        "path": "./plugins/mturac/pr-storyteller"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Development & Workflow",
-      "description": "Generate PR title, body, and test plan from commits and diff vs base branch.",
-      "icon": "./plugins/mturac/pr-storyteller/assets/icon.svg"
-    },
-    {
-      "name": "mturac-test-gap",
-      "displayName": "Test Gap",
-      "source": {
-        "source": "local",
-        "path": "./plugins/mturac/test-gap"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Development & Workflow",
-      "description": "Find lines in your diff lacking test coverage (Cobertura, lcov, or coverage.json).",
-      "icon": "./plugins/mturac/test-gap/assets/icon.svg"
-    },
-    {
-      "name": "mturac-deps-doctor",
-      "displayName": "Deps Doctor",
-      "source": {
-        "source": "local",
-        "path": "./plugins/mturac/deps-doctor"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Development & Workflow",
-      "description": "Multi-ecosystem dependency audit covering npm, pip, cargo, and go in one report.",
-      "icon": "./plugins/mturac/deps-doctor/assets/icon.svg"
-    },
-    {
-      "name": "mturac-env-lint",
-      "displayName": "Env Lint",
-      "source": {
-        "source": "local",
-        "path": "./plugins/mturac/env-lint"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Development & Workflow",
-      "description": ".env vs .env.example key parity \u2014 never prints values.",
-      "icon": "./plugins/mturac/env-lint/assets/icon.svg"
-    },
-    {
-      "name": "mturac-secret-guard",
-      "displayName": "Secret Guard",
-      "source": {
-        "source": "local",
-        "path": "./plugins/mturac/secret-guard"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Development & Workflow",
-      "description": "Pre-commit secret scanner using pattern and entropy detection, redacted output.",
-      "icon": "./plugins/mturac/secret-guard/assets/icon.svg"
-    },
-    {
-      "name": "mturac-standup-gen",
-      "displayName": "Standup Generator",
-      "source": {
-        "source": "local",
-        "path": "./plugins/mturac/standup-gen"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Development & Workflow",
-      "description": "Daily standup notes from git activity across one or many repositories.",
-      "icon": "./plugins/mturac/standup-gen/assets/icon.svg"
-    },
-    {
-      "name": "mturac-todo-harvest",
-      "displayName": "TODO Harvest",
-      "source": {
-        "source": "local",
-        "path": "./plugins/mturac/todo-harvest"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Development & Workflow",
-      "description": "Scan for TODO/FIXME/HACK comments with git blame author and age.",
-      "icon": "./plugins/mturac/todo-harvest/assets/icon.svg"
-    },
-    {
-      "name": "mturac-flaky-detector",
-      "displayName": "Flaky Detector",
-      "source": {
-        "source": "local",
-        "path": "./plugins/mturac/flaky-detector"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Development & Workflow",
-      "description": "Run a test command N times and report per-test flakiness percentage.",
-      "icon": "./plugins/mturac/flaky-detector/assets/icon.svg"
-    },
-    {
-      "name": "mturac-changelog-forge",
-      "displayName": "Changelog Forge",
-      "source": {
-        "source": "local",
-        "path": "./plugins/mturac/changelog-forge"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Development & Workflow",
-      "description": "Convert conventional commits into a CHANGELOG section + semver bump suggestion.",
-      "icon": "./plugins/mturac/changelog-forge/assets/icon.svg"
     }
-  ]
+  ],
+  "total": 81
 }
