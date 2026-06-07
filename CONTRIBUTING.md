@@ -5,10 +5,168 @@ Thanks for helping grow the Codex plugin ecosystem!
 ## Adding a Plugin
 
 1. **Fork** this repository
-2. **Add your entry** to the appropriate section in `README.md`
-3. **Add your plugin bundle** under `plugins/<owner>/<repo>/`
-4. **Follow the format** described below
-5. **Submit a PR** with a clear description
+2. **Run the scanner** on your plugin (see [Scanner Requirements](#scanner-requirements) below)
+3. **Add your entry** to the appropriate section in `README.md`
+4. **Add your plugin bundle** under `plugins/<owner>/<repo>/`
+5. **Follow the format** described below
+6. **Submit a PR** with a clear description and your scanner report
+
+## Scanner Requirements (Mandatory)
+
+All plugins submitted to this list **must pass the HOL AI Plugin Scanner**.
+
+### Minimum Requirements
+
+- **Score:** ≥ 80/100
+- **Severity:** No critical or high findings
+- **Action:** Your repo must have the scanner running in CI (see [Example Workflows](#example-workflows))
+
+### Run the Scanner Locally
+
+```bash
+# Install
+pipx install plugin-scanner
+
+# Scan your plugin
+plugin-scanner scan . --format text
+
+# Or lint for quick fixes
+plugin-scanner lint . --format text
+
+# Verify install readiness
+plugin-scanner verify . --format text
+```
+
+### Required in Your Plugin Repo
+
+Your plugin repository must include:
+
+1. **`.codex-plugin/plugin.json`** — Valid manifest with required fields
+2. **`SECURITY.md`** — Vulnerability disclosure policy
+3. **`LICENSE`** — MIT or Apache-2.0 recommended
+4. **`README.md`** — Clear description of what the plugin does
+5. **No hardcoded secrets** — Scanner will flag API keys, tokens, passwords
+6. **No dangerous MCP commands** — No `rm -rf`, `sudo`, `curl | sh`, `eval`, `exec` patterns
+7. **SHA-pinned GitHub Actions** — If you use Actions, pin to commit SHAs
+8. **Dependency lockfiles** — `package-lock.json` or `requirements-lock.txt`
+
+### Scanner Score Breakdown
+
+| Category | Max Points | What to Check |
+|----------|-----------|----------------|
+| Manifest Validation | 31 | `plugin.json` valid, required fields, semver, kebab-case |
+| Security | 36 | `SECURITY.md`, `LICENSE`, no secrets, hardened MCP remotes |
+| Operational Security | 20 | Pinned Actions, no `write-all`, Dependabot, lockfiles |
+| Best Practices | 15 | `README.md`, skills directory, `SKILL.md` frontmatter, `.codexignore` |
+| Marketplace | 15 | `marketplace.json` valid, safe source paths |
+| Skill Security | 15 | Cisco scan clean, no elevated findings, analyzable |
+| Code Quality | 10 | No `eval`/`new Function`, no shell injection |
+
+**Total: 130 points.** Aim for 80+ to qualify.
+
+## Example Workflows
+
+Add this to your plugin repo at `.github/workflows/scanner.yml`:
+
+### Basic CI Gate (Recommended)
+
+```yaml
+name: HOL Plugin Scanner
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+
+      - name: HOL Plugin Scanner
+        uses: hashgraph-online/ai-plugin-scanner-action@v1
+        with:
+          plugin_dir: "."
+          mode: scan
+          min_score: 80
+          fail_on_severity: high
+          format: sarif
+          upload_sarif: true
+```
+
+### Strict Security Gate (For High-Trust Plugins)
+
+```yaml
+name: HOL Plugin Scanner — Strict
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+
+      - name: HOL Plugin Scanner
+        uses: hashgraph-online/ai-plugin-scanner-action@v1
+        with:
+          plugin_dir: "."
+          mode: scan
+          min_score: 90
+          fail_on_severity: medium
+          format: sarif
+          upload_sarif: true
+
+      - name: Submit to Registry if Eligible
+        if: github.ref == 'refs/heads/main'
+        uses: hashgraph-online/ai-plugin-scanner-action@v1
+        with:
+          plugin_dir: "."
+          mode: submit
+          min_score: 90
+          submission_enabled: true
+          submission_score_threshold: 90
+```
+
+### Lint-First Workflow (For Development)
+
+```yaml
+name: HOL Plugin Scanner — Lint
+
+on:
+  pull_request:
+    branches: [main, master]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+
+      - name: HOL Plugin Linter
+        uses: hashgraph-online/ai-plugin-scanner-action@v1
+        with:
+          plugin_dir: "."
+          mode: lint
+          fail_on_severity: high
+```
 
 ## Plugin Bundle Requirements
 
@@ -78,6 +236,8 @@ Rules:
 - Must be **functional** with a valid `.codex-plugin/plugin.json` manifest
 - Must include an **icon** as described above
 - Include a **description** that explains what the plugin does
+- **Must pass the HOL Plugin Scanner** (score ≥ 80, no critical/high findings)
+- **Must have scanner running in CI** (GitHub Action or equivalent)
 - **One plugin per PR** (unless adding multiple related plugins)
 
 ## Categories
@@ -96,15 +256,28 @@ Before submitting, verify:
 - [ ] Icon file exists at the path referenced by `composerIcon`
 - [ ] All links in the README entry are valid
 - [ ] No placeholder or TODO values in plugin.json
+- [ ] **Plugin Scanner score ≥ 80** (attach report or link to CI)
+- [ ] **No critical or high severity findings** in scanner report
+- [ ] **Scanner CI is configured** in your plugin's repo (link to workflow file)
+- [ ] `SECURITY.md` exists in your plugin repo
+- [ ] `LICENSE` exists in your plugin repo
 
 ## CI Checks
 
-All PRs are automatically validated. The CI will check:
+All PRs to this repo are automatically validated. The CI will check:
 
 1. **Alphabetical order** - README entries must be sorted within each section
 2. **Plugin manifest** - `plugin.json` must exist and contain required fields
 3. **Icon presence** - `composerIcon` must point to an existing file
 4. **Marketplace sync** - `plugins.json` and `marketplace.json` stay in sync with README
 5. **Markdown links** - All URLs in README must be reachable
+6. **Scanner verification** - PR description must include scanner score or CI link
 
 If CI fails, check the logs for specific errors and fix before re-pushing.
+
+## Getting Help
+
+- Scanner docs: [HOL Guard](https://github.com/hashgraph-online/hol-guard)
+- Scanner action: [ai-plugin-scanner-action](https://github.com/hashgraph-online/ai-plugin-scanner-action)
+- Registry: [hol.org/registry/plugins](https://hol.org/registry/plugins)
+- Issues: Open an issue in this repo with the `[scanner]` label
