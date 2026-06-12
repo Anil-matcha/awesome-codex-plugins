@@ -205,6 +205,7 @@ Third-party plugins built by the community. [PRs welcome](#contributing)!
 
 ### Tools & Integrations
 
+- [Generative Media Skills](https://github.com/SamurAIGPT/Generative-Media-Skills) - 13 expert skills for image, video, and audio generation using 100+ AI models — FLUX, Midjourney v7, Veo3, Kling 3.0, Suno, HunyuanVideo, and more. Powered by muapi.ai.
 - [Agent Message Queue](https://github.com/avivsinai/agent-message-queue) - File-based inter-agent messaging with co-op mode, cross-project federation, and orchestrator integrations.
 - [Agent Vision](https://github.com/zfifteen/agent-vision) - macOS-only local camera plugin for explicit snapshots, streaming controls, and file-backed image input.
 - [Agentgram](https://github.com/jerryfane/agentgram) - Send explicit Telegram messages from Codex and local AI agents through a Telegram bot token and chat id.
