@@ -1,0 +1,44 @@
+{
+  "name": "generative-media-skills",
+  "version": "1.0.0",
+  "description": "13 skills for image, video, and audio generation using 100+ AI models \u2014 FLUX, Midjourney v7, Veo3, Kling 3.0, Suno, and HunyuanVideo.",
+  "author": {
+    "name": "MuAPI",
+    "url": "https://github.com/SamurAIGPT"
+  },
+  "homepage": "https://muapi.ai",
+  "repository": "https://github.com/SamurAIGPT/Generative-Media-Skills",
+  "license": "MIT",
+  "keywords": [
+    "image-generation",
+    "video-generation",
+    "audio",
+    "ai",
+    "flux",
+    "midjourney",
+    "veo3",
+    "kling",
+    "suno",
+    "generative-ai",
+    "media",
+    "skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Generative Media Skills",
+    "shortDescription": "Image, video & audio generation with 100+ AI models.",
+    "longDescription": "13 expert skills for AI agents to generate images, videos, and audio using 100+ models \u2014 FLUX, Midjourney v7, Veo3, Kling 3.0, Suno, HunyuanVideo, and more.",
+    "developerName": "MuAPI",
+    "category": "Content Creation",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use the muapi-cinema-director skill to create a cinematic product video."
+    ],
+    "brandColor": "#6366f1",
+    "composerIcon": "./assets/icon.svg",
+    "websiteURL": "https://muapi.ai"
+  }
+}
